@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240, 37%, 90%;
+    --foreground: 0, 0%, 0%;
+
+    --primary: 279, 69%, 36%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0, 8%, 85%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 224 71.4% 4.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    scroll-behavior: smooth;
+  }
+
+  .dark {
+    --background: 0, 0%, 0%;
+    --foreground: 279, 70%, 92%;
+
+    --primary: 279, 69%, 36%;
+    --primary-foreground: 240, 37%, 90%;
+
+    --secondary: 279, 70%, 13%;
+    --secondary-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 216 12.2% 83.9%;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  @keyframes animateSquiggles {
+    0% {
+      background-position: 0% 100%;
+    }
+    25% {
+      background-position: 25% 100%;
+    }
+    50% {
+      background-position: 50% 100%;
+    }
+    75% {
+      background-position: 75% 100%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+
+  a:hover {
+    background-position: 0% 100%;
+    background-repeat: repeat-x;
+    background-size: 100px;
+    background-image: url(/squiggly-line.svg);
+    background-position: 10% 100%;
+    animation-name: animateSquiggles;
+    animation-direction: forward;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  /* Add bg-none from tailwind to remove the squiggly line */
+  .squiggly-line {
+    padding-bottom: 0.1em;
+    background-position: 0% 100%;
+    background-repeat: repeat-x;
+    background-size: 100px;
+    background-image: url(/squiggly-line.svg);
+    background-position: 10% 100%;
+  }
+
+  .dark .squiggly-line {
+    background-image: url(/squiggly-line-dark.svg);
+  }
+
+  .dark a:hover {
+    background-image: url(/squiggly-line-dark.svg);
+  }
+}

@@ -1,0 +1,58 @@
+import type { NextApiRequest, NextApiResponse } from "next";
+import { Resend } from "resend";
+
+type Data = {
+  data?: string;
+  error?: string;
+};
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<Data>
+) {
+  if (req.method === "POST") {
+    try {
+      const { email, message, name } = JSON.parse(req.body);
+
+      if (!email || !message || !name) {
+        res.status(400).json({ error: "Invalid request" });
+        return;
+      } else if (name.length < 2) {
+        res.status(400).json({ error: "Name too short" });
+        return;
+      } else if (name.length > 50) {
+        res.status(400).json({ error: "Name too long" });
+        return;
+      } else if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) === false) {
+        res.status(400).json({ error: "Invalid email" });
+        return;
+      } else if (message.length < 10) {
+        res.status(400).json({ error: "Message too short" });
+        return;
+      } else if (message.length > 500) {
+        res.status(400).json({ error: "Message too long" });
+        return;
+      }
+
+      const response = await resend.emails.send({
+        from: "Contact Form <onboarding@resend.dev>",
+        to: "abdulrazak85663@gmail.com",
+        subject: "Message from contact form",
+        reply_to: email,
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      });
+      if (response.error) {
+        throw new Error();
+      }
+      res.status(200).json({ data: "Email sent" });
+    } catch (error: unknown) {
+      res
+        .status(500)
+        .json({ error: "Something went wrong. Please try again." });
+    }
+  } else {
+    res.status(400).json({ error: "Invalid request" });
+  }
+}
