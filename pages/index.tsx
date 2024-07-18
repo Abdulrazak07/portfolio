@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profilePic from "../public/profile-pic.png";
+import profilePic from "../public/about-pic.jpg";
 import AnimatedHeading from "@/components/AnimatedHeading";
 import Link from "next/link";
 import Icons from "@/components/Icons";
@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
       <TransitionEffect />
       {/* <ParticleBackgroundEffect></ParticleBackgroundEffect> */}
-      <section className="flex flex-col md:flex-row items-center md:justify-between w-full mb-5 min-h-[calc(100vh-5rem)]">
+      <section className="grid grid-cols-8 md:gap-16 pt-16">
       {/* <div className="w-1/2">
           <Image
             src={profilePic}
@@ -28,7 +28,8 @@ export default function Home() {
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
           />
         </div> */}
-        <div className="md:w-1/2 md:pl-5 pt-5 w-full">
+        
+        <div className="items-start justify-start lg:col-span-4 col-span-8">
           <AnimatedHeading className="xl:text-6xl md:text-left lg:text-5xl md:text-4xl text-3xl text-center">
             Hello, I&apos;m Razak 👋. A passionate web dev who is keen on
             learning new tech.
@@ -53,6 +54,17 @@ export default function Home() {
               Contact
             </Link>
           </div>
+        </div>
+
+         <div className="col-span-8 relative rounded-2xl p-8 border-2 border-primary bg-background h-fit lg:col-span-4 my-5 sm:my-8 md:my-0">
+          <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-primary" />
+          <Image
+            src={profilePic}
+            alt="Abdul Razak"
+            className="rounded-2xl dark:brightness-75"
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+          />
         </div>
        
       </section>

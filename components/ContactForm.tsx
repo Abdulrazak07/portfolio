@@ -96,7 +96,7 @@ export default function Contact() {
         once: true,
       }}
     >
-      <h2 className="text-4xl my-7 font-semibold text-left md:text-5xl text-black">
+      <h2 className="text-4xl my-7 font-semibold text-left md:text-5xl text-black pt-20">
         Let&apos;s work together
       </h2>
 

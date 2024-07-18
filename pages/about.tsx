@@ -1,7 +1,7 @@
 import AnimatedHeading from "@/components/AnimatedHeading";
 import Head from "next/head";
 import Image from "next/image";
-import profilePic from "../public/about-pic.jpg";
+import profilePic from "../public/aboutPic.jpeg";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
@@ -20,7 +20,7 @@ const About = () => {
       <TransitionEffect />
       <AnimatedHeading>A little about me</AnimatedHeading>
       <section className="grid grid-cols-8 md:gap-16">
-        <div className="items-start justify-start lg:col-span-4 col-span-8">
+        <div className="items-start justify-start pt-10 lg:col-span-4 col-span-8">
           <h2 className="mb-4 text-lg font-bold opacity-70">BIOGRAPHY</h2>
           <p className="font-medium ">
             Hi, I&apos;m <strong>Razak</strong>, a full-stack developer based in
