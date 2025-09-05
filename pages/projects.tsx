@@ -7,6 +7,7 @@ import kozhiKari from "../public/kozhiKari.png";
 import reasonablemovers from "../public/reasonableMovers.png"
 import isthiri from "../public/isthiri.png"
 import portfolio from "../public/portfolio.png";
+import featherWood from "../public/featherWood.png"
 import sRamalingam from "../public/s-ramalingam.png";
 import StupidNodeCli from "../public/stupid-node-cli.png";
 import cmsBlog from "../public/cms-blog.png";
@@ -169,9 +170,22 @@ const Projects = () => {
         <div className="col-span-12">
           <FeaturedProject {...allProjects[0]} />
         </div>
+        
         <div className="col-span-12 md:col-span-6">
           <Project {...allProjects[1]} />
         </div>
+           <div className="col-span-12 md:col-span-6">
+          <Project {...allProjects[2]} />
+        </div>
+
+        <div className="col-span-12">
+          <FeaturedProject {...allProjects[3]} />
+        </div>
+
+          <div className="col-span-12 md:col-span-6">
+          <Project {...allProjects[4]} />
+        </div>
+        
 
       </div>
     </>
@@ -186,7 +200,7 @@ const allProjects = [
     title: "Isthiri Laundry",
     summary:
       "A laundry service web application developed with Next.js and Tailwind CSS. Features include booking form, dynamic pricing page, testimonial section, and SEO-optimized content. Built for performance, responsiveness, and scalability to improve customer engagement.",
-    link: "https://isthiri.vercel.app/",
+    link: "https://www.isthiri.com/",
     image: isthiri,
     github: "https://github.com/Abdulrazak07/isthiri",
   },
@@ -199,7 +213,15 @@ const allProjects = [
     image: reasonablemovers,
     github: "https://github.com/Abdulrazak07/reasonable-movers",
   },
-
+  {
+    type: "E-Commerce Website",
+    title: "Featherwood",
+    summary:
+      "An e-commerce platform built with Next.js and Tailwind CSS to showcase and sell premium furniture products. Features include product listings, category-based navigation, responsive design, and an optimized frontend for speed and SEO. Designed with a clean, modern UI to enhance user experience",
+    link: "https://feather-wood.vercel.app/",
+    image: featherWood,
+    github: "https://github.com/Abdulrazak07/featherwood",
+  },
   {
     type: "Landing Page",
     title: "Kozhi Kari",
