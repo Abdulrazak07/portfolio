@@ -4,6 +4,8 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
 import kozhiKari from "../public/kozhiKari.png";
+import reasonablemovers from "../public/reasonableMovers.png"
+import isthiri from "../public/isthiri.png"
 import portfolio from "../public/portfolio.png";
 import sRamalingam from "../public/s-ramalingam.png";
 import StupidNodeCli from "../public/stupid-node-cli.png";
@@ -180,10 +182,29 @@ export default Projects;
 
 const allProjects = [
   {
+    type: "Service App",
+    title: "Isthiri Laundry",
+    summary:
+      "A laundry service web application developed with Next.js and Tailwind CSS. Features include booking form, dynamic pricing page, testimonial section, and SEO-optimized content. Built for performance, responsiveness, and scalability to improve customer engagement.",
+    link: "https://isthiri.vercel.app/",
+    image: isthiri,
+    github: "https://github.com/Abdulrazak07/isthiri",
+  },
+  {
+    type: "Business Website",
+    title: "Reasonable Movers",
+    summary:
+      "A professional moving company website build with Next.js and Tailwind CSS. Focused on SEO optimization, clean UI, and improved site performance to attract more local leads. Includes service pages, contact form, and responsive design for better user experience.",
+    link: "https://www.reasonablemovers.ca/",
+    image: reasonablemovers,
+    github: "https://github.com/Abdulrazak07/reasonable-movers",
+  },
+
+  {
     type: "Landing Page",
     title: "Kozhi Kari",
     summary:
-    "A landing page built with React, Typescript and Tailwind CSS and integrated with Telegram to receive feedbacks. It is a static site hosted on Vercel.",
+      "A landing page built with React, Typescript and Tailwind CSS and integrated with Telegram to receive feedbacks. It is a static site hosted on Vercel.",
     link: "https://kozhi-kari.vercel.app/",
     image: kozhiKari,
     github: "https://github.com/Abdulrazak07/Koli-kari",
